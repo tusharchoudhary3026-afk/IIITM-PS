@@ -1,0 +1,42 @@
+Independent relabelling check (human vs AI labels), n = 28 complaints
+Agreement: 4 of 28 (14%)
+Labelled by: AAROHI GUPTA, ABHAY RAI YADAV, ABHIPSH PATEL, AJAY, AKSHAT PARE, ANNANYA, ARYAN, ATNAYA CHOUDHARY, DEWANSH GOYAL, JAI SHUKLA, KAMAL KISHOR CHOUDHARY, KRISH MATTA, MAYANK, MITTI, NEHA CHOUDHARY, PARUL PATEL, SHASHANK, SOUMYA SINGH KUSHWAH, SUHANI SHARMA, SWAPNIL CHOUDHARY, TAMANNA, TONY STARK, TUSHAR CHOUDHARY, VAIBHAV, VARUN, VIJAY, YASH, YASHU
+Cohen's kappa: 0.00
+  english: 0 of 5 agree
+  hindi: 2 of 12 agree
+  hinglish: 2 of 11 agree
+  AI label Drainage Dept: 0 of 4 agree
+  AI label Electricity Dept: 0 of 4 agree
+  AI label MULTI: 4 of 4 agree
+  AI label Roads Dept: 0 of 4 agree
+  AI label Sanitation Dept: 0 of 4 agree
+  AI label UNCLEAR: 0 of 4 agree
+  AI label Water Supply Dept: 0 of 4 agree
+
+Disagreements (read these; each is either an AI label error or a genuinely ambiguous complaint):
+  row 1: AI=UNCLEAR | human=MULTI | यह कई दिनों से लंबित है, मुझे कार्रवाई चाहिए।
+  row 2: AI=Sanitation Dept | human=MULTI | A dead dog has been lying on the DD Nagar road since morning.
+  row 3: AI=Electricity Dept | human=MULTI | Main road ki streetlight din mein bhi jalti rehti hai.
+  row 6: AI=Drainage Dept | human=MULTI | Tansen Road pe school gate ke paas manhole ka dhakkan gayab hai.
+  row 7: AI=Roads Dept | human=MULTI | स्टेशन रोड का फुटपाथ टूटा हुआ है, बुज़ुर्ग लोग गिर जाते हैं।
+  row 8: AI=UNCLEAR | human=MULTI | Please kisi ko bhejiye, bahar kya ho raha hai dekhne ke liye.
+  row 9: AI=Roads Dept | human=MULTI | Phool Bagh ke paas speed breaker toot gaya hai, nukile kinare nikle hain.
+  row 10: AI=Drainage Dept | human=MULTI | The drain near the Kampoo vegetable market is overflowing into the lane.
+  row 11: AI=Sanitation Dept | human=MULTI | The public dustbin near the temple is overflowing.
+  row 13: AI=Sanitation Dept | human=MULTI | Colony ke peeche khule maidan mein log kachra jala rahe hain.
+  row 14: AI=Water Supply Dept | human=MULTI | महाराज बाड़ा के पास पानी की पाइप फट गई है और सड़क पर पानी बह रहा है।
+  row 15: AI=Electricity Dept | human=MULTI | Hamare ghar ke saamne ka street light raat bhar jhapakta hai.
+  row 16: AI=Electricity Dept | human=MULTI | An electric wire is hanging low from the pole in Jayendraganj lane.
+  row 17: AI=Drainage Dept | human=MULTI | वार्ड 7 में सीवर लाइन जाम है और बहुत बदबू आ रही है।
+  row 18: AI=Water Supply Dept | human=MULTI | There has been no water supply in Hazira since yesterday morning.
+  row 19: AI=Electricity Dept | human=MULTI | Thatipur park ke paas streetlight ek hafte se band hai.
+  row 20: AI=Roads Dept | human=MULTI | ठाटीपुर की सड़क बारिश के बाद बुरी तरह टूट गई है, गाड़ियां नहीं निकल पातीं।
+  row 21: AI=Drainage Dept | human=MULTI | मानसून से पहले हमारे इलाके की नालियों की सफाई नहीं हुई।
+  row 23: AI=Water Supply Dept | human=MULTI | पानी की टंकी के पास पाइपलाइन लीक हो रही है, पानी बेकार जा रहा है।
+  row 24: AI=Sanitation Dept | human=MULTI | Morar ka community toilet ek hafte se saaf nahi hua.
+  row 25: AI=UNCLEAR | human=MULTI | हमारे इलाके में हालत बहुत खराब है, कोई सुनता नहीं।
+  row 26: AI=Water Supply Dept | human=MULTI | गोले का मंदिर में नल से गंदा पीला पानी आ रहा है।
+  row 27: AI=Roads Dept | human=MULTI | झांसी रोड पर बस स्टॉप के पास बड़ा गड्ढा है, दोपहिया वाहनों के लिए खतरनाक है।
+  row 28: AI=UNCLEAR | human=MULTI | Ghar ke paas problem hai, please dekh lijiye.
+
+This is one teammate's labels on a sample. It checks the AI labels; it does not make the dataset human-verified.

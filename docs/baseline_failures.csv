@@ -1,0 +1,16 @@
+﻿id,text,language,kind,label,pred,split_flagged,overlap,outcome
+13,The speed breaker near Phool Bagh is broken and has sharp edges.,english,single,Roads Dept,,False,0,abstained
+14,"Phool Bagh ke paas speed breaker toot gaya hai, nukile kinare nikle hain.",hinglish,single,Roads Dept,,False,0,abstained
+15,फूल बाग के पास स्पीड ब्रेकर टूट गया है और उसके किनारे नुकीले हैं।,hindi,single,Roads Dept,,False,0,abstained
+22,The manhole cover is missing near the school gate on Tansen Road.,english,single,Drainage Dept,,False,1,abstained
+23,Tansen Road pe school gate ke paas manhole ka dhakkan gayab hai.,hinglish,single,Drainage Dept,,False,1,abstained
+24,तानसेन रोड पर स्कूल के गेट के पास मैनहोल का ढक्कन गायब है।,hindi,single,Drainage Dept,,False,1,abstained
+34,A dead dog has been lying on the DD Nagar road since morning.,english,single,Sanitation Dept,Roads Dept,False,0,wrong
+35,DD Nagar ki sadak pe subah se mara hua kutta pada hai.,hinglish,single,Sanitation Dept,Roads Dept,False,0,wrong
+36,डीडी नगर की सड़क पर सुबह से मरा हुआ कुत्ता पड़ा है।,hindi,single,Sanitation Dept,Roads Dept,False,0,wrong
+52,The streetlights on the main road stay on during the day and waste power.,english,single,Electricity Dept,,False,0,abstained
+53,Main road ki streetlight din mein bhi jalti rehti hai.,hinglish,single,Electricity Dept,,False,0,abstained
+54,मुख्य सड़क की स्ट्रीटलाइट दिन में भी जलती रहती है।,hindi,single,Electricity Dept,,False,0,abstained
+67,Waterlogging on the road in front of the bus depot after every rain.,english,single,Drainage Dept,,False,1,abstained
+68,"Road pe paani bhara hai, bus depot ke saamne har baarish mein.",hinglish,single,Drainage Dept,,False,1,abstained
+69,बस डिपो के सामने सड़क पर हर बारिश में पानी भर जाता है।,hindi,single,Drainage Dept,Roads Dept,False,1,wrong

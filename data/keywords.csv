@@ -1,0 +1,36 @@
+department,keyword
+Roads Dept,pothole
+Roads Dept,road
+Roads Dept,sadak
+Roads Dept,footpath
+Roads Dept,gadda
+Roads Dept,गड्ढा
+Roads Dept,सड़क
+Roads Dept,रोड
+Drainage Dept,drain
+Drainage Dept,nali
+Drainage Dept,sewer
+Drainage Dept,waterlogging
+Drainage Dept,paani bhara
+Drainage Dept,manhole
+Drainage Dept,नाली
+Drainage Dept,सीवर
+Drainage Dept,मैनहोल
+Sanitation Dept,garbage
+Sanitation Dept,kachra
+Sanitation Dept,dustbin
+Sanitation Dept,toilet
+Sanitation Dept,कचरा
+Sanitation Dept,कूड़ेदान
+Electricity Dept,streetlight
+Electricity Dept,street light
+Electricity Dept,bijli
+Electricity Dept,स्ट्रीटलाइट
+Electricity Dept,स्ट्रीट लाइट
+Electricity Dept,बिजली
+Water Supply Dept,water supply
+Water Supply Dept,tap
+Water Supply Dept,pipeline
+Water Supply Dept,pipe
+Water Supply Dept,पाइपलाइन
+Water Supply Dept,नल

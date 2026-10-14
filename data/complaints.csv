@@ -1,0 +1,97 @@
+﻿id,family,text,language,owner_label,sub_labels,has_overlap,is_compound,labeller,split,tag
+1,R1,"There is a big pothole on Jhansi Road near the bus stop, dangerous for bikes.",english,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+2,R1,"Jhansi Road pe bus stop ke paas bada gadda hai, bike walon ke liye khatarnak hai.",hinglish,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+3,R1,"झांसी रोड पर बस स्टॉप के पास बड़ा गड्ढा है, दोपहिया वाहनों के लिए खतरनाक है।",hindi,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+4,R2,The road in Thatipur is badly broken after the rain and vehicles cannot pass.,english,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+5,R2,"Thatipur ki sadak baarish ke baad bahut tut gayi hai, gaadi nahi nikal paati.",hinglish,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+6,R2,"ठाटीपुर की सड़क बारिश के बाद बुरी तरह टूट गई है, गाड़ियां नहीं निकल पातीं।",hindi,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+7,R3,The road near City Centre was dug up two weeks ago and never repaired.,english,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+8,R3,"City Centre ke paas sadak do hafte pehle khodi thi, abhi tak theek nahi hui.",hinglish,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+9,R3,"सिटी सेंटर के पास सड़क दो हफ्ते पहले खोदी गई थी, अभी तक ठीक नहीं हुई।",hindi,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+10,R4,The footpath on Station Road is broken and elderly people keep tripping.,english,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+11,R4,"Station Road ka footpath tuta hua hai, buzurg log gir jaate hain.",hinglish,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+12,R4,"स्टेशन रोड का फुटपाथ टूटा हुआ है, बुज़ुर्ग लोग गिर जाते हैं।",hindi,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+13,R5,The speed breaker near Phool Bagh is broken and has sharp edges.,english,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+14,R5,"Phool Bagh ke paas speed breaker toot gaya hai, nukile kinare nikle hain.",hinglish,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+15,R5,फूल बाग के पास स्पीड ब्रेकर टूट गया है और उसके किनारे नुकीले हैं।,hindi,Roads Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+16,D1,The drain near the Kampoo vegetable market is overflowing into the lane.,english,Drainage Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+17,D1,"Kampoo sabzi mandi ke paas nali overflow ho rahi hai, gali mein gandagi fail gayi hai.",hinglish,Drainage Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+18,D1,"कंपू सब्ज़ी मंडी के पास नाली उफन रही है, गली में गंदगी फैल गई है।",hindi,Drainage Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+19,D2,The sewer line in Ward 7 is blocked and there is a terrible smell.,english,Drainage Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+20,D2,Ward 7 mein sewer line jam hai aur bahut badbu aa rahi hai.,hinglish,Drainage Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+21,D2,वार्ड 7 में सीवर लाइन जाम है और बहुत बदबू आ रही है।,hindi,Drainage Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+22,D3,The manhole cover is missing near the school gate on Tansen Road.,english,Drainage Dept,,1,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+23,D3,Tansen Road pe school gate ke paas manhole ka dhakkan gayab hai.,hinglish,Drainage Dept,,1,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+24,D3,तानसेन रोड पर स्कूल के गेट के पास मैनहोल का ढक्कन गायब है।,hindi,Drainage Dept,,1,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+25,D4,The drains in our area were not cleaned before the monsoon.,english,Drainage Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+26,D4,Monsoon se pehle hamare area ki nali ki safai nahi hui.,hinglish,Drainage Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+27,D4,मानसून से पहले हमारे इलाके की नालियों की सफाई नहीं हुई।,hindi,Drainage Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+28,S1,Garbage has not been collected in our street for three days.,english,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+29,S1,"Kachra 3 din se nahi utha, ward 12 mein.",hinglish,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+30,S1,हमारी गली में तीन दिन से कचरा नहीं उठा है।,hindi,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+31,S2,The public dustbin near the temple is overflowing.,english,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+32,S2,Mandir ke paas dustbin bhar ke bahar gir raha hai.,hinglish,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+33,S2,मंदिर के पास कूड़ेदान भरकर बाहर गिर रहा है।,hindi,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+34,S3,A dead dog has been lying on the DD Nagar road since morning.,english,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+35,S3,DD Nagar ki sadak pe subah se mara hua kutta pada hai.,hinglish,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+36,S3,डीडी नगर की सड़क पर सुबह से मरा हुआ कुत्ता पड़ा है।,hindi,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+37,S4,People are burning garbage in the open field behind our colony.,english,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+38,S4,Colony ke peeche khule maidan mein log kachra jala rahe hain.,hinglish,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+39,S4,कॉलोनी के पीछे खुले मैदान में लोग कचरा जला रहे हैं।,hindi,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+40,S5,The community toilet in Morar has not been cleaned for a week.,english,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+41,S5,Morar ka community toilet ek hafte se saaf nahi hua.,hinglish,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+42,S5,मुरार का सामुदायिक शौचालय एक हफ्ते से साफ नहीं हुआ है।,hindi,Sanitation Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+43,E1,The streetlight near Thatipur park has not worked for a week.,english,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+44,E1,Thatipur park ke paas streetlight ek hafte se band hai.,hinglish,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+45,E1,ठाटीपुर पार्क के पास स्ट्रीटलाइट एक हफ्ते से बंद है।,hindi,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+46,E2,An electric wire is hanging low from the pole in Jayendraganj lane.,english,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+47,E2,Jayendraganj gali mein pole se bijli ka taar neeche latak raha hai.,hinglish,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+48,E2,जयेंद्रगंज गली में खंभे से बिजली का तार नीचे लटक रहा है।,hindi,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+49,E3,The street light in front of our house flickers all night.,english,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+50,E3,Hamare ghar ke saamne ka street light raat bhar jhapakta hai.,hinglish,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+51,E3,हमारे घर के सामने की स्ट्रीट लाइट रात भर झपकती है।,hindi,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+52,E4,The streetlights on the main road stay on during the day and waste power.,english,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+53,E4,Main road ki streetlight din mein bhi jalti rehti hai.,hinglish,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+54,E4,मुख्य सड़क की स्ट्रीटलाइट दिन में भी जलती रहती है।,hindi,Electricity Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+55,W1,There has been no water supply in Hazira since yesterday morning.,english,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+56,W1,Hazira mein kal subah se water supply nahi aa rahi.,hinglish,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+57,W1,हज़ीरा में कल सुबह से पानी की आपूर्ति बंद है।,hindi,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+58,W2,The main pipeline near the water tank is leaking and wasting water.,english,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+59,W2,"Water tank ke paas pipeline leak ho rahi hai, paani bekar ja raha hai.",hinglish,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+60,W2,"पानी की टंकी के पास पाइपलाइन लीक हो रही है, पानी बेकार जा रहा है।",hindi,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+61,W3,The tap water is coming out dirty and yellow in Gole Ka Mandir.,english,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+62,W3,Gole Ka Mandir mein tap ka paani ganda aur peela aa raha hai.,hinglish,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+63,W3,गोले का मंदिर में नल से गंदा पीला पानी आ रहा है।,hindi,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+64,W4,Water pressure is very low in our society.,english,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+65,W4,Hamari society mein paani ka pressure bahut kam hai.,hinglish,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+66,W4,हमारी सोसाइटी में पानी का दबाव बहुत कम है।,hindi,Water Supply Dept,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+67,O1,Waterlogging on the road in front of the bus depot after every rain.,english,Drainage Dept,,1,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+68,O1,"Road pe paani bhara hai, bus depot ke saamne har baarish mein.",hinglish,Drainage Dept,,1,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+69,O1,बस डिपो के सामने सड़क पर हर बारिश में पानी भर जाता है।,hindi,Drainage Dept,,1,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+70,O2,A water pipe burst near Maharaj Bada and water is flooding the road.,english,Water Supply Dept,,1,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+71,O2,Maharaj Bada ke paas paani ki pipe fat gayi hai aur sadak par paani beh raha hai.,hinglish,Water Supply Dept,,1,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+72,O2,महाराज बाड़ा के पास पानी की पाइप फट गई है और सड़क पर पानी बह रहा है।,hindi,Water Supply Dept,,1,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+73,C1,Streetlight is not working in Thatipur and garbage is also piled up near the park.,english,MULTI,Electricity Dept|Sanitation Dept,0,1,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+74,C1,Thatipur mein streetlight band hai aur kachra bhi jama hai.,hinglish,MULTI,Electricity Dept|Sanitation Dept,0,1,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+75,C1,ठाटीपुर में स्ट्रीटलाइट बंद है और कचरा भी जमा है।,hindi,MULTI,Electricity Dept|Sanitation Dept,0,1,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+76,C2,There is a pothole on Sirol Road and the drain next to it is blocked.,english,MULTI,Roads Dept|Drainage Dept,0,1,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+77,C2,Sirol Road pe gadda hai aur uske bagal ki nali bhi band hai.,hinglish,MULTI,Roads Dept|Drainage Dept,0,1,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+78,C2,सिरोल रोड पर गड्ढा है और उसके बगल की नाली भी बंद है।,hindi,MULTI,Roads Dept|Drainage Dept,0,1,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+79,C3,There is no water supply since morning and the road outside is also broken.,english,MULTI,Water Supply Dept|Roads Dept,0,1,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+80,C3,Subah se water supply nahi aa rahi aur bahar ki sadak bhi tooti hui hai.,hinglish,MULTI,Water Supply Dept|Roads Dept,0,1,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+81,C3,सुबह से पानी की आपूर्ति बंद है और बाहर की सड़क भी टूटी हुई है।,hindi,MULTI,Water Supply Dept|Roads Dept,0,1,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+82,C4,Garbage is not being collected and the streetlight outside our gate is also dead.,english,MULTI,Sanitation Dept|Electricity Dept,0,1,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+83,C4,Kachra nahi utha aur gate ke bahar ki streetlight bhi band hai.,hinglish,MULTI,Sanitation Dept|Electricity Dept,0,1,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+84,C4,कचरा नहीं उठा और गेट के बाहर की स्ट्रीटलाइट भी बंद है।,hindi,MULTI,Sanitation Dept|Electricity Dept,0,1,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+85,U1,"Problem near my house, please fix.",english,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+86,U1,"Ghar ke paas problem hai, please dekh lijiye.",hinglish,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+87,U1,"मेरे घर के पास समस्या है, कृपया ठीक करवाएं।",hindi,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,test,SYNTHETIC
+88,U2,"Very bad situation in our area, nobody is listening.",english,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+89,U2,"Hamare area mein halat bahut kharab hai, koi sunta nahi.",hinglish,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+90,U2,"हमारे इलाके में हालत बहुत खराब है, कोई सुनता नहीं।",hindi,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+91,U3,Please send someone to check what is happening outside.,english,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+92,U3,"Please kisi ko bhejiye, bahar kya ho raha hai dekhne ke liye.",hinglish,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+93,U3,"कृपया किसी को भेजें, बाहर क्या हो रहा है यह देखने के लिए।",hindi,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,val,SYNTHETIC
+94,U4,"This has been pending for many days, I want action.",english,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+95,U4,"Yeh kai dinon se pending hai, mujhe action chahiye.",hinglish,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
+96,U4,"यह कई दिनों से लंबित है, मुझे कार्रवाई चाहिए।",hindi,UNCLEAR,,0,0,AI_LABELLED_AI_REVIEWED,train,SYNTHETIC
