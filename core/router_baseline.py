@@ -1,4 +1,5 @@
 """Engine 3: keyword/rule baseline. Build and evaluate this BEFORE any ML."""
+import re
 import pandas as pd
 from .config import KEYWORDS, CONFIDENCE_THRESHOLD
 
@@ -12,11 +13,22 @@ def load_keywords():
 
 
 def route(text: str, kw=None):
-    kw = kw or load_keywords()
+    kw = load_keywords() if kw is None else kw
     t = text.lower()
     scores, evidence = {}, {}
     for dept, words in kw.items():
-        hits = [w for w in words if w in t]
+        hits = []
+        for word in words:
+            term = str(word).strip().lower()
+            if not term:
+                continue
+            if re.search(r"[A-Za-z]", term):
+                matched = re.search(rf"(?<!\w){re.escape(term)}(?!\w)", t) is not None
+            else:
+                # Python's \w boundaries split some Devanagari combining marks.
+                matched = term in t
+            if matched:
+                hits.append(term)
         if hits:
             scores[dept] = len(hits)
             evidence[dept] = hits

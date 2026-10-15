@@ -254,8 +254,21 @@ def extract_location(text: str) -> str:
 
 
 def _find(table: dict, text: str):
-    t = text.lower()
-    return [label for label, words in table.items() if any(w in t for w in words)]
+    found = []
+    for label, words in table.items():
+        for word in words:
+            term = word.strip().lower()
+            # Match whole words/phrases in Latin text; retain substring matching for
+            # Devanagari, where Unicode word boundaries can split combining marks.
+            if re.search(r"[A-Za-z]", term):
+                pattern = rf"(?<!\w){re.escape(term)}(?!\w)"
+                matched = re.search(pattern, text, flags=re.I) is not None
+            else:
+                matched = term in text.lower()
+            if matched:
+                found.append(label)
+                break
+    return found
 
 
 def extract_issue(text: str) -> str:

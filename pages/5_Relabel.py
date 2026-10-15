@@ -46,6 +46,7 @@
 import pandas as pd
 import streamlit as st
 from core.config import ROOT, SIM_LABEL
+from core.ui import apply_demo_style, render_hero
 
 SHEET = ROOT / "data" / "relabel_sheet.csv"
 OPTIONS = {"Roads": "Roads", "Drainage": "Drainage", "Sanitation": "Sanitation",
@@ -53,7 +54,8 @@ OPTIONS = {"Roads": "Roads", "Drainage": "Drainage", "Sanitation": "Sanitation",
            "The complaint clearly names TWO different problems (write both in the note)": "MULTI",
            "Too vague to tell": "UNCLEAR"}
 
-st.title("5. Independent relabelling")
+apply_demo_style()
+render_hero("Dataset quality", "Independent relabelling", "Review synthetic complaint labels independently to help assess the dataset.", badge="RELABEL")
 st.warning(SIM_LABEL)
 st.caption("For ONE or TWO named team members who did NOT write the complaints. Do not open complaints.csv or the "
            "dataset card. Read each complaint and pick the department that should handle it. Most complaints "
@@ -61,6 +63,9 @@ st.caption("For ONE or TWO named team members who did NOT write the complaints. 
 
 who = st.text_input("Your full name (recorded with your labels)")
 sheet = pd.read_csv(SHEET, encoding="utf-8-sig", dtype=str).fillna("")
+if sheet.empty:
+    st.info("The relabelling sheet has no complaints yet.")
+    st.stop()
 if "labeller" not in sheet.columns:
     sheet["labeller"] = ""
 done = int((sheet["your_label"] != "").sum())

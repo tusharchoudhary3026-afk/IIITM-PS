@@ -87,13 +87,24 @@ def repeat_reassignment(history: list[dict], min_moves: int = 2):
     return None
 
 
-def check_suggestions(depts: list, table=None):
-    """Flag an overlap only when BOTH parties of a documented overlap appear in the suggestions."""
+OVERLAP_CUES = {
+    "waterlogging on road": ("waterlogging", "waterlogged", "flood", "paani bhara", "पानी भर"),
+    "open manhole / missing drain cover": ("manhole", "missing drain cover", "open drain cover", "मैनहोल"),
+    "burst water pipe flooding road": ("burst pipe", "burst water pipe", "pipeline leak", "pipe burst"),
+}
+
+
+def check_suggestions(depts: list, complaint_text: str = "", table=None):
+    """Flag only when both departments and a cue for that overlap are present."""
     t = table if table is not None else load_table()
+    text = str(complaint_text).lower()
     out = []
     for _, r in t.iterrows():
         ov = r["overlap_owner"]
-        if isinstance(ov, str) and ov.strip() and r["owner"] in depts and ov in depts:
+        cues = OVERLAP_CUES.get(str(r["issue_type"]).strip().lower(), ())
+        issue_matches = any(cue.lower() in text for cue in cues)
+        if (isinstance(ov, str) and ov.strip() and r["owner"] in depts and ov in depts
+                and issue_matches):
             out.append({"issue_type": r["issue_type"], "owner": r["owner"], "overlap_owner": ov,
                         "source": r["source"], "verification": r["verification"]})
     return out

@@ -63,9 +63,11 @@ from core.db import init_db, fetch_all
 from core.ledger import log_event, history, save_correction
 from core.config import REASON_CODES, REVIEW_ACTIONS, SIM_LABEL
 from core import ownership
+from core.ui import apply_demo_style, render_hero
 
 init_db()
-st.title("2. Human Review")
+apply_demo_style()
+render_hero("Case handling", "Review complaint", "Inspect the original complaint and suggestions, then record the reviewer decision.", badge="REVIEW")
 st.warning(SIM_LABEL)
 
 rows = fetch_all("SELECT id, case_id, parent_id, language, original_text FROM complaints ORDER BY id DESC")

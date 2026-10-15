@@ -25,8 +25,10 @@ import streamlit as st
 from scripts.evaluate import run, summary
 from scripts.evaluate_full import evaluate, report
 from core.config import SIM_LABEL
+from core.ui import apply_demo_style, render_hero
 
-st.title("4. Evaluation")
+apply_demo_style()
+render_hero("Prototype evidence", "Evaluation", "Compare the current routing approaches and inspect their measured limits.", badge="EVALUATION")
 st.error(SIM_LABEL)
 st.caption("Numerator/denominator reported. Small n means preliminary. Labels are AI-written, not independent human labels.")
 

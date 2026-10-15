@@ -59,7 +59,7 @@ def evaluate(split="test"):
     flagged = 0
     for t in ov.text:
         r = kw and router_baseline.route(t, kw)
-        if r["top3"] and ownership.check_suggestions([x["dept"] for x in r["top3"]]):
+        if r["top3"] and ownership.check_suggestions([x["dept"] for x in r["top3"]], t):
             flagged += 1
     res["ownership_overlap_flagged"] = (flagged, len(ov))
     res["assumption_rules"] = (len(ownership.unverified_rows()), len(ownership.load_table()))
