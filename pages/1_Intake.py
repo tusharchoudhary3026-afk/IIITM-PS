@@ -5,6 +5,7 @@ from core.db import init_db, insert_complaint, insert_suggestion
 from core.ledger import log_event
 from core.config import SIM_LABEL
 from core.ui import apply_demo_style, render_hero
+from core.db import init_db, insert_complaint, insert_suggestion, fetch_all
 
 init_db()
 apply_demo_style()
@@ -207,7 +208,10 @@ if "rec" in st.session_state:
                     st.error(str(exc))
             if c2.button("Keep as one complaint", use_container_width=True):
                 try:
-                    count = splitter.merge_back(saved["cid"])
-                    st.info(f"Kept as one complaint. {count} linked sub-issues were affected.")
+                    if not fetch_all("SELECT 1 FROM complaints WHERE parent_id=? LIMIT 1", (saved["cid"],)):
+                        st.info("Kept as one complaint. No split was saved, so nothing changed.")
+                    else:
+                        st.info(f"Merged back. {splitter.merge_back(saved['cid'])} linked sub-issues affected.")
                 except ValueError as exc:
                     st.error(str(exc))
+            
