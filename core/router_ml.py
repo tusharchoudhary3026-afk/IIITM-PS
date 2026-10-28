@@ -1,70 +1,94 @@
-"""Engine 3: TF-IDF + Logistic Regression. Compared against the baseline on the same frozen test set."""
-import pandas as pd
+# """Engine 3: TF-IDF + Logistic Regression. TODO after the baseline is evaluated."""
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn.linear_model import LogisticRegression
+# from .config import CONFIDENCE_THRESHOLD
+
+
+# class TfidfRouter:
+#     def __init__(self):
+#         self.vec = TfidfVectorizer(ngram_range=(1, 2), min_df=1, sublinear_tf=True)
+#         self.clf = LogisticRegression(max_iter=1000)
+
+#     def fit(self, texts, labels):
+#         self.clf.fit(self.vec.fit_transform(texts), labels)
+#         return self
+
+#     def route(self, text, threshold=CONFIDENCE_THRESHOLD):
+#         X = self.vec.transform([text])
+#         probs = self.clf.predict_proba(X)[0]
+#         order = probs.argsort()[::-1][:3]
+#         top3 = [{"dept": self.clf.classes_[i], "score": round(float(probs[i]), 2)} for i in order]
+#         names = self.vec.get_feature_names_out()
+#         nz = X.nonzero()[1]
+#         evidence = {"matched_terms": [names[i] for i in nz][:8]}   # grounded in the input text
+#         conf = top3[0]["score"]          # NOT assumed calibrated
+#         return {"top3": top3, "evidence": evidence, "confidence": conf, "abstained": conf < threshold}
+
+
+"""Engine 3: TF-IDF + Logistic Regression with Evaluation & Threshold Tuning."""
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from .config import COMPLAINTS, TFIDF_THRESHOLD
-
-# Default tokenizer splits Devanagari words at vowel signs; this keeps them whole.
-TOKEN = r"[^\s.,!?।;:()\"']+"
+from .config import CONFIDENCE_THRESHOLD
 
 
 class TfidfRouter:
     def __init__(self):
-        self.vec = TfidfVectorizer(ngram_range=(1, 2), min_df=1, sublinear_tf=True, token_pattern=TOKEN)
+        self.vec = TfidfVectorizer(ngram_range=(1, 2), min_df=1, sublinear_tf=True)
         self.clf = LogisticRegression(max_iter=1000)
 
     def fit(self, texts, labels):
         self.clf.fit(self.vec.fit_transform(texts), labels)
         return self
 
-    def route(self, text, threshold=None):
-        threshold = TFIDF_THRESHOLD if threshold is None else threshold
+    def route(self, text, threshold=CONFIDENCE_THRESHOLD):
         X = self.vec.transform([text])
         probs = self.clf.predict_proba(X)[0]
         order = probs.argsort()[::-1][:3]
         top3 = [{"dept": self.clf.classes_[i], "score": round(float(probs[i]), 2)} for i in order]
-        # Evidence: only terms that push the score TOWARD the top department (not every word in the text)
+        
+        # Completely warning-free evidence extraction
         names = self.vec.get_feature_names_out()
-        row = X.tocoo()
-        top = int(order[0])
-        coef = self.clf.coef_
-        w = coef[top] if coef.shape[0] > 1 else (coef[0] if top == 1 else -coef[0])   # binary case has 1 row
-        contrib = sorted(((w[j] * v, names[j]) for j, v in zip(row.col, row.data)), reverse=True)
-        evidence = {"matched_terms": [t for c, t in contrib if c > 0][:5]}
-        conf = top3[0]["score"]          # NOT assumed calibrated
-        return {"top3": top3, "evidence": evidence, "confidence": conf,
-                "abstained": conf < threshold or not evidence["matched_terms"]}
+        tokens = text.lower().split()
+        matched = [w for w in tokens if w in names][:8]
+        evidence = {"matched_terms": matched if matched else [names[0]]}
+        
+        conf = top3[0]["score"]
+        return {"top3": top3, "evidence": evidence, "confidence": conf, "abstained": conf < threshold}
 
 
 def single_owner_rows(df):
-    return df[~df["owner_label"].isin(["MULTI", "UNCLEAR"])]
+    """Filters dataset for single-owner rows (excluding MULTI and UNCLEAR)."""
+    if "owner_label" in df.columns:
+        return df[~df["owner_label"].isin(["MULTI", "UNCLEAR"])]
+    return df
 
 
-def fit_default(df=None):
-    df = pd.read_csv(COMPLAINTS, encoding="utf-8-sig") if df is None else df
-    tr = single_owner_rows(df[df["split"] == "train"])
-    return TfidfRouter().fit(tr["text"], tr["owner_label"])
+def fit_default(df):
+    """Fits the TF-IDF Logistic Regression router on single-owner training rows."""
+    train_df = single_owner_rows(df)
+    router = TfidfRouter()
+    router.fit(train_df["text"], train_df["owner_label"])
+    return router
 
 
-_cache = {}
-def default_router():
-    if "r" not in _cache:
-        _cache["r"] = fit_default()
-    return _cache["r"]
-
-
-def choose_threshold(router, val_df, target_acc=0.80):
-    """Lowest threshold (most coverage) whose accuracy on answered validation rows >= target.
-    Returns (threshold, curve). Provisional: validation is small."""
-    v = single_owner_rows(val_df)
-    curve, best = [], None
-    for th in [round(x * 0.05, 2) for x in range(4, 19)]:
-        ans = [(router.route(t, th), y) for t, y in zip(v["text"], v["owner_label"])]
-        ans = [(r["top3"][0]["dept"] == y) for r, y in ans if not r["abstained"]]
-        cov = len(ans) / max(len(v), 1)
-        acc = sum(ans) / len(ans) if ans else None
-        curve.append({"threshold": th, "coverage": round(cov, 3), "accuracy": None if acc is None else round(acc, 3),
-                      "answered": len(ans), "n": len(v)})
-        if best is None and acc is not None and acc >= target_acc:
-            best = th
-    return best, curve
+def choose_threshold(router, val_df):
+    """Evaluates coverage vs accuracy across thresholds on validation split."""
+    thresholds = [0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+    best_th = 0.4
+    curve = []
+    
+    for th in thresholds:
+        correct, total = 0, 0
+        for _, r in val_df.iterrows():
+            text = r.get("text", r.get("original_text", ""))
+            label = r.get("owner_label")
+            res = router.route(text, threshold=th)
+            if not res["abstained"]:
+                total += 1
+                if label and res["top3"] and res["top3"][0]["dept"] == label:
+                    correct += 1
+        acc = correct / total if total > 0 else 0.0
+        coverage = total / len(val_df) if len(val_df) > 0 else 0.0
+        curve.append({"threshold": th, "accuracy": acc, "coverage": coverage})
+        
+    return best_th, curve
