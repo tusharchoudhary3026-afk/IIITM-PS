@@ -41,6 +41,15 @@ if st.button("Submit decision"):
     except ValueError as e:
         st.error(str(e))
 
+from core import ownership as _own
+_depts = []
+if sugs:
+    _depts = [x["dept"] for x in json.loads(sugs[0]["top3"])]
+_ov = _own.check_suggestions(_depts, pick["original_text"])
+for o in _ov:
+    st.warning(f"Possible ownership overlap: {o['owner']} / {o['overlap_owner']} · {o['issue_type']}\n\n"
+               f"Rule status: {o['verification']} · {o['source']}")
+    
 st.subheader("Ledger (append-only)")
 h = history(pick["id"])
 st.dataframe(h)
